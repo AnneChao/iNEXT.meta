@@ -1,0 +1,15 @@
+Package: iNEXT.meta
+Type: Package
+Title: Meta-analysis of the Difference Between Two Treatments in iNterpolation and EXTrapolation for Beta Diversity Across Three Dimensions
+Version: 1.0.0
+Author: Anne Chao [aut, cre], PoYen Chuang [ctb]
+Maintainer: Anne Chao <chao@stat.nthu.edu.tw>
+Description: Provides functions to compute the difference between two treatments in taxonomic, phylogenetic, or functional diversity (3D) at a standardized sample coverage across alpha, beta, and gamma diversity levels, as well as dissimilarity and turnover indices. This package also includes tools to conduct meta-analysis and generate forest plots for visualizing the results.
+License: GPL(>=3)
+Imports: dplyr, forestplot, grid, gridExtra, iNEXT.3D, iNEXT.beta3D, knitr, magrittr, metafor, purrr, rmarkdown, stringr, tibble, tidyr
+Suggests: tidyverse
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+Depends: R (>= 4.0)
+RoxygenNote: 7.3.2
