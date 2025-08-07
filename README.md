@@ -1,2 +1,2 @@
 # iNEXT.meta
-iNterpolation and EXTrapolation with beta diversity for three dimensions of biodiversity in meta-analyses
+Two main functions "iNEXTmeta_beta" and "ggiNEXTmeta" are included for review purposes.
