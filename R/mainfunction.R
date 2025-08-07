@@ -8,10 +8,10 @@
 ################################################################################################################################################################################################################################################################################################
 ################################################################################################################################################################################################################################################################################################
 #--------------------------------------------------------------------------------------------------##
-# Main function iNEXT.meta() for meta analysis  
+# Main function iNEXTmeta_beta() for meta analysis  
 #--------------------------------------------------------------------------------------------------##
 
-#' iNEXT.meta() is a function that estimates the difference of standardized 3D (taxonomic, phylogenetic and
+#' iNEXTmeta_beta() is a function that estimates the difference of standardized 3D (taxonomic, phylogenetic and
 #' functional) gamma, alpha, beta diversity, and four dissimilarity measures with two treatments (e.g., enhanced vs. control), and perform meta analysis for several
 #' studies/sites. 
 #' @param data (a) For datatype = "abundance", data can be input as a matrix/data.frame (species by assemblages).
@@ -65,7 +65,7 @@
 
 
 
-iNEXT.meta <- function(data, diversity="TD", order.q=0, datatype="incidence_raw", level = NULL, nboot = 10, treatment_order, conf=0.95, 
+iNEXTmeta_beta <- function(data, diversity="TD", order.q=0, datatype="incidence_raw", level = NULL, nboot = 10, treatment_order, conf=0.95, 
                            PDtree, PDreftime = NULL, PDtype = "meanPD",
                            FDdistM, FDtype = "AUC", FDtau = NULL, FDcut_number = 30){
   
@@ -317,10 +317,10 @@ iNEXT.meta <- function(data, diversity="TD", order.q=0, datatype="incidence_raw"
 #' ggiNEXTmeta() is a function that provides forest plot for the difference of standardized 3D
 #' diversity and four dissimilarity measures with two treatments.
 #' 
-#' @param data the outcome of the iNEXT.meta function. 
+#' @param data the outcome of the iNEXTmeta_beta function. 
 #' @param range the range of the forest plot. 
 #' @param num_round a number that the values show on the plot are rounded to the specified number of decimal places.
-#' @param type (argument only for the output from iNEXT.meta), selection of diversity type for plotting forest plot: 'Gamma' = Gamma diversity, 'Alpha' = Alpha diversity, 'Beta' = Beta diversity,
+#' @param type (argument only for the output from iNEXTmeta_beta), selection of diversity type for plotting forest plot: 'Gamma' = Gamma diversity, 'Alpha' = Alpha diversity, 'Beta' = Beta diversity,
 #' 1-C' = Sørensen-type non-overlap dissimilarity, '1-U' = Jaccard-type non-overlap dissimilarity, '1-V' = Sørensen-type turnover dissimilarity, and '1-S' = Jaccard-type turnover dissimilarity.
 #' 
 #' 
