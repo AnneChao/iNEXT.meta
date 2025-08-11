@@ -407,19 +407,19 @@ ggiNEXTmeta <- function(data, range, num_round, type = NULL)
 #' data(Bat_incidence_data)
 #' data(Bat_tree)
 #' 
-#'meta_inci_PD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 0,
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50,
-#'                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
+#' meta_inci_PD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 0,
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50,
+#'                                  treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
 #'
 #'
-#'meta_inci_PD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 1,
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50,
-#'                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
+#' meta_inci_PD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 1,
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50,
+#'                                  treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
 #'   
 #'                                 
-#'meta_inci_PD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 2,
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50,
-#'                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)                                 
+#' meta_inci_PD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 2,
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50,
+#'                                  treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)                                 
 #' 
 #' 
 #' 
@@ -432,19 +432,19 @@ ggiNEXTmeta <- function(data, range, num_round, type = NULL)
 #' data(Bat_distM)
 #' 
 #' 
-#'meta_inci_FD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 0, 
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
-#'                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
+#' meta_inci_FD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 0, 
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50, 
+#'                                  treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
 #'
 #'
-#'meta_inci_FD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 1, 
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
-#'                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
+#' meta_inci_FD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 1, 
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50, 
+#'                                  treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
 #'
 #'
-#'meta_inci_FD_q2 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 2, 
-#'                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
-#'                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
+#' meta_inci_FD_q2 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 2, 
+#'                                  datatype = "incidence_raw", level = NULL, nboot = 50, 
+#'                                  treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, FDcut_number = 30)
 #'
 #' }
 #' 
