@@ -8,13 +8,13 @@ diversity and four dissimilarity measures with two treatments.}
 ggiNEXTmeta(data, range, num_round, type = NULL)
 }
 \arguments{
-\item{data}{the outcome of the iNEXT.meta function.}
+\item{data}{the outcome of the iNEXTmeta_beta function.}
 
 \item{range}{the range of the forest plot.}
 
 \item{num_round}{a number that the values show on the plot are rounded to the specified number of decimal places.}
 
-\item{type}{(argument only for the output from iNEXT.meta), selection of diversity type for plotting forest plot: 'Gamma' = Gamma diversity, 'Alpha' = Alpha diversity, 'Beta' = Beta diversity,
+\item{type}{(argument only for the output from iNEXTmeta_beta), selection of diversity type for plotting forest plot: 'Gamma' = Gamma diversity, 'Alpha' = Alpha diversity, 'Beta' = Beta diversity,
 1-C' = Sørensen-type non-overlap dissimilarity, '1-U' = Jaccard-type non-overlap dissimilarity, '1-V' = Sørensen-type turnover dissimilarity, and '1-S' = Jaccard-type turnover dissimilarity.}
 }
 \value{
@@ -23,4 +23,160 @@ A forest plot that visualizing the output of iNEXTbeta3Dmeta. In the plot, it sh
 \description{
 ggiNEXTmeta() is a function that provides forest plot for the difference of standardized 3D
 diversity and four dissimilarity measures with two treatments.
+}
+\examples{
+\donttest{
+
+
+# Plot meta forest plots for three types of diversity and four types of dissimilarity
+# of taxonomic diversity, using incidence data with orders q = 0, 1, and 2
+data(Bat_incidence_data)
+meta_inci_TD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "TD", order.q = 0, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95)
+                                 
+                                 
+meta_inci_TD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "TD", order.q = 1, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95)
+                                 
+                                 
+meta_inci_TD_q2 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "TD", order.q = 2, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95)
+
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_TD_q0, num_round = 3, range = c(-20, 15), type = "1-S")
+
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_TD_q1, num_round = 3, range = c(-20, 15), type = "1-S")
+
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_TD_q2, num_round = 3, range = c(-20, 15), type = "1-S")
+
+
+
+# Plot meta forest plots for three types of diversity and four types of dissimilarity
+# of phylogenetic diversity, using incidence data with orders q = 0, 1, and 2
+
+# Meta-analysis of incidence data for phylogenetic diversity at orders q = 0, 1, and 2
+data(Bat_incidence_data)
+data(Bat_tree)
+
+meta_inci_PD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 0,
+                                 datatype = "incidence_raw", level = NULL, nboot = 50,
+                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
+
+
+meta_inci_PD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 1,
+                                 datatype = "incidence_raw", level = NULL, nboot = 50,
+                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)
+  
+                                
+meta_inci_PD_q2 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "PD", order.q = 2,
+                                 datatype = "incidence_raw", level = NULL, nboot = 50,
+                                 treatment_order = c("E","C"), conf = 0.95, PDtree = Bat_tree)  
+
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_PD_q0, num_round = 3, range = c(-20, 15), type = "1-S")
+
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_PD_q1, num_round = 3, range = c(-20, 15), type = "1-S")
+
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_PD_q2, num_round = 3, range = c(-20, 15), type = "1-S")
+
+
+
+# Plot meta forest plots for three types of diversity and four types of dissimilarity
+# of functional diversity, using incidence data with orders q = 0, 1, and 2
+
+data(Bat_incidence_data)
+data(Bat_distM)
+
+
+meta_inci_FD_q0 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 0, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, 
+                                 FDcut_number = 30)
+
+
+meta_inci_FD_q1 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 1, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, 
+                                 FDcut_number = 30)
+
+
+meta_inci_FD_q2 = iNEXTmeta_beta(data = Bat_incidence_data, diversity = "FD", order.q = 2, 
+                                 datatype = "incidence_raw", level = NULL, nboot = 50, 
+                                 treatment_order = c("E","C"), conf = 0.95, FDdistM = Bat_distM, 
+                                 FDcut_number = 30)
+
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_FD_q0, num_round = 3, range = c(-20, 15), type = "1-S")
+
+
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_FD_q1, num_round = 3, range = c(-20, 15), type = "1-S")
+
+
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "Gamma")
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "Alpha")
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "Beta")
+
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "1-C")
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "1-U")
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "1-V")
+ggiNEXTmeta(meta_inci_FD_q2, num_round = 3, range = c(-20, 15), type = "1-S")
+
+}
+
 }
